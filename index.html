@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <!-- Block Robots from crawling this page -->
+    <meta name="robots" content="noindex">
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Give the page a title -->
+    <title>Earn & Enjoy Free Robux!</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/emojis/1007881438386983013.webp?size=96&quality=lossless"
+
+    <!-- Include our jQuery version -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!-- Include our Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700|Roboto:400,700" rel="stylesheet">
+
+    <!-- Include FontAwesome -->
+    <link href="https://s3.us-west-1.amazonaws.com/cloudfls.co/themes/startui/css/lib/font-awesome/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Sweet Alert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.css">
+
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+
+    <!-- Color Picker -->
+    <script src="https://s3.us-west-1.amazonaws.com/cloudfls.co/themes/startui/css/lib/colorpicker/js/colorpicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://s3.us-west-1.amazonaws.com/cloudfls.co/themes/startui/css/lib/colorpicker/css/colorpicker.css" />
+
+    <!-- Our Application's CSS stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://s3.us-west-1.amazonaws.com/cloudfls.co/uploads/assets/151981978211ad81ad9b8c843e4b3c3052a8d6138c.css" />
+
+    <script>
+
+        // What's the XRF token?
+        var xrfToken = "%XRF_TOKEN%";
+
+        // What Locker Settings were saved?
+        var savedLockerSettings = {"css":{"pc":{"body":{"background":{"color":"#ffffff","horizontal":"left","image":"","size":"cover","vertical":"top"}},"body-human-verification":{"background":{"color":"#fbfbfb","horizontal":"left","image":"","size":"cover","vertical":"top"},"background-hover":{"color":"#b1b1b1","horizontal":"left","image":"","size":"cover","vertical":"top"},"border-radius":"4","border-color":"#b9b9b9","border-color-hover":"#b9b9b9","border-width":"1","font-color":"#9c9c9c","font-color-hover":"#565656","font-size":"14","font-weight":"normal","margin-bottom":"79","margin-top":"84","padding-top":"8","padding-bottom":"8"},"body-offers":{"text-bottom-align":"center","text-bottom-color":"#969696","text-bottom-padding-bottom":"22","text-bottom-padding-top":"18","text-bottom-shadow":"transparent","text-bottom-size":"13","text-bottom-weight":"normal","text-top-align":"center","text-top-color":"#696969","text-top-padding-bottom":"27","text-top-padding-top":"14","text-top-shadow":"transparent","text-top-size":"21","text-top-weight":"normal"},"body-offers-list":{"align":"center","background":{"color":"#4d4d4d","horizontal":"left","image":"","size":"cover","vertical":"top"},"background-hover":{"color":"#b1b1b1","horizontal":"left","image":"","size":"cover","vertical":"top"},"border-color":"#dedede","border-radius":"4","border-width":"1","font-color":"#ffffff","font-color-hover":"#ffffff","font-size":"13","font-weight":"normal","margin-bottom":"5","margin-top":"0","padding-bottom":"10","padding-top":"13","text-align":"center","width":"95"},"header":{"background":{"color":"#ffffff","horizontal":"left","image":"","size":"cover","vertical":"top"},"border-color":"#ffffff","border-width":"1","border-box-shadow":"transparent","display":"block","font-align":"center","font-color":"#5f5f5f","font-size":"17","font-weight":"bold","padding-bottom":"0","padding-top":"24"},"footer":{"background":{"color":"#ffffff","horizontal":"left","image":"","size":"cover","vertical":"top"},"border-color":"#ffffff","border-width":"1","border-box-shadow":"#d1d1d1","display":"none","font-align":"center","font-color":"#5f5f5f","font-size":"10","font-weight":"bold","padding-bottom":"11","padding-top":"13"},"locker":{"border-radius":"6","box-shadow":"#292929","font":"Montserrat","width":"600"},"page":{"background":{"color":"#464141","horizontal":"left","image":"","size":"cover","vertical":"top"},"opacity":"65"}},"phone":{"body":{},"body-human-verification":{"border-radius":"4","border-width":"1","font-size":"11","font-weight":"normal","margin-bottom":"57","margin-top":"60","padding-top":"8","padding-bottom":"8"},"body-offers":{"text-bottom-padding-bottom":"19","text-bottom-padding-top":"12","text-bottom-size":"11","text-bottom-weight":"normal","text-top-padding-bottom":"27","text-top-padding-top":"9","text-top-size":"17","text-top-weight":"normal"},"body-offers-list":{"border-width":"1","font-size":"12","font-weight":"normal","margin-bottom":"6","margin-top":"0","padding-bottom":"12","padding-top":"12","width":"95"},"header":{"border-width":"1","font-size":"13","font-weight":"normal","padding-bottom":"10","padding-top":"13"},"footer":{"border-width":"1","font-size":"9","font-weight":"normal","padding-bottom":"8","padding-top":"5"},"locker":{},"page":{}}},"css-custom":"#my-locker #my-locker-top span img {\n    height: 90px;\n    background-size: contain;\n    margin-top: 10px;\n}\n\n#my-locker .my-locker-body-text-top font {\n    /* CHANGE YOUR FONT COLOR */\n    color: #2566BF;\n}\n\nbody.mobile #my-locker #my-locker-top span img {\n    height: 65px;\n    margin-top: 25px;\n}\n\n","google":{"analytics-tracking-id":"","event-tracking":"disabled","translate":"enabled"},"instructions":"","javascript-custom":"","offers":{"display":"5","min-offers":"1","min-payout":"1","on-complete":"redirect","redirect-url":"http://d35kbxc0t24sp8.cloudfront.net/public/redirect.php?lead_id=%lead_id%","show-tooltips":"disabled"},"other":{"alert-before-leaving":"disabled","disable-right-click":"enabled","esc-key-close":"disabled","human-verification":"disabled"},"text":{"header":"<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Roblox_logo_2017.svg/2560px-Roblox_logo_2017.svg.png\" />","human-verification":"Verify Through Survey","body-top":"Complete any <b>two</b> of the Offers below, and your <b>10,000 Robux</b> Promo Code will unlock automatically!","body-bottom":"<b>Waiting for completion...</b><br style=\"margin-bottom: 30px;\"><img src=\"https://imgs.search.brave.com/0y_wZKjH3d4605SOPWga_imltgWWfFdsjXC0mSmO9XI/rs:fit:64:21:1/g:ce/aHR0cDovL29wZW5n/cmFwaGljZGVzaWdu/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAwOS8wMS9kb3Rz/NjQuZ2lm.gif\" height=\"7\" width=\"20\"/>","footer":"All trademarks are property of their respective owners."}};
+
+        // Our live Offers.
+        var liveOffers = [{"id":"53177516","name":"RZUSA - Standard - Cash App $750","anchor":"Your Chance to get $750 to your PayPal Account!","conversion":"Complete with valid info","category_id":"5","network_icon":"https:\/\/gyazo.com\/11d379f8288c1372ff341ccad94a7afc.png","user_payout":"1.80","payout":"1.80","user_enabled":"1","url":"https://smrturl.co/o/193455/32173539?s1="},{"id":"1196338","name":"RZUSA - Standard - Walmart $100","anchor":"Get a $100 Walmart Gift Card!","conversion":"Complete with valid info","category_id":"5","network_icon":"","user_payout":"1.80","payout":"1.80","user_enabled":"1","url":"https://smrturl.co/o/193455/1196338?s1="},{"id":"53287700","name":"S&P - Roblox $100 (Express)","anchor":"Your Chance to get a $100 Roblox Game Card","conversion":"Complete with valid info","category_id":"5","network_icon":"https:\/\/gyazo.com\/8b583603a7c3db8659c9c70edb5e67f9.png","user_payout":"1.80","payout":"1.80","user_enabled":"1","url":"https://smrturl.co/o/193455/53287700?s1="},{"id":"32173539","name":"RZUSA - Standard - Google Play $100","anchor":"Get a $100 Google Play Gift Card","conversion":"Complete with valid info","category_id":"5","network_icon":"https:\/\/gyazo.com\/86bc9f0f063079ea3c6458c001b696b2.png","user_payout":"1.80","payout":"1.80","user_enabled":"1","url":"https://smrturl.co/o/193455/32173539?s1="},{"id":"53289138","name":"DeluxeBucks - Chance To Win $25,000","anchor":"Enter Your Details to Have a Chance to Win a $25,000 in Cash Now!","conversion":"Complete with valid info","category_id":"5","network_icon":"https:\/\/i.gyazo.com\/dfda59dd6b06c141c70c4800a772e52f.png","user_payout":"2.72","payout":"2.72","user_enabled":"1","url":"https://smrturl.co/o/193455/53289138?s1="},{"id":"53206664","name":"RZUSA - Standard - Venmo $750","anchor":"Your Chance to get $750 to Your Venmo Account","conversion":"Complete with valid info","category_id":"5","network_icon":"https:\/\/gyazo.com\/e621657efc60e7ba5b181211329ab886.png","user_payout":"1.80","payout":"1.80","user_enabled":"1","url":"https://www.usarewardsforyou.com/?Flow=B8912EB7-52B9-AC70-E025-D796AB2A07C1D0585F58&isPrePop=true&wall=true&RBC=1&reward=roblox100&o=214594&affsecid=2-ccj61dm969cs0rbdleig&subaff1=193455&subaff2=203285&subaff3=193954&subaff4=Roblox-100-Express&DVID=&subsrc=193455&sid2=193455&aff_sub2=193455&source=193455"},{"id":"53265163","name":"ConsumerDigitalSurvey - Win $750 Shein Gift Card","anchor":"Finish a Short Survey to Win a $750 Shein Gift Card Now!","conversion":"Complete with valid info","category_id":"5","network_icon":"https:\/\/i.gyazo.com\/01cc5a6e740052d9eb7e47d71331d18f.png","user_payout":"3.20","payout":"3.20","user_enabled":"1","url":"https://www.usarewardsforyou.com/?Flow=B8912EB7-52B9-AC70-E025-D796AB2A07C1D0585F58&isPrePop=true&wall=true&RBC=1&reward=roblox100&o=214594&affsecid=2-ccj61dm969cs0rbdleig&subaff1=193455&subaff2=203285&subaff3=193954&subaff4=Roblox-100-Express&DVID=&subsrc=193455&sid2=193455&aff_sub2=193455&source=193455"},{"id":"53225688","name":"Buzz - Win $500 JetBlue Gift Card","anchor":"Finish Our Survey and Win a $500 JetBlue Gift Card Now!","conversion":"Complete with valid info","category_id":"5","network_icon":"https:\/\/i.gyazo.com\/1853680b442fbdcc827bd39853a9f824.png","user_payout":"3.20","payout":"3.20","user_enabled":"1","url":"https://www.usarewardsforyou.com/?Flow=B8912EB7-52B9-AC70-E025-D796AB2A07C1D0585F58&isPrePop=true&wall=true&RBC=1&reward=roblox100&o=214594&affsecid=2-ccj61dm969cs0rbdleig&subaff1=193455&subaff2=203285&subaff3=193954&subaff4=Roblox-100-Express&DVID=&subsrc=193455&sid2=193455&aff_sub2=193455&source=193455"},{"id":"53198927","name":"Survey Voices - Play & Earn","anchor":"Play Games and Earn Money!","conversion":"Complete with valid info","category_id":"5","network_icon":"https:\/\/gyazo.com\/35073fdf9bfecd22bda80e8cb5c6f4ca.png","user_payout":"1.80","payout":"1.80","user_enabled":"1","url":"https://www.usarewardsforyou.com/?Flow=B8912EB7-52B9-AC70-E025-D796AB2A07C1D0585F58&isPrePop=true&wall=true&RBC=1&reward=roblox100&o=214594&affsecid=2-ccj61dm969cs0rbdleig&subaff1=193455&subaff2=203285&subaff3=193954&subaff4=Roblox-100-Express&DVID=&subsrc=193455&sid2=193455&aff_sub2=193455&source=193455"},{"id":"53271698","name":"ConsumerDigitalSurvey - Win $1000 CashApp","anchor":"Finish One Last Step to Win a $1000 CashApp Now!","conversion":"Complete with valid info","category_id":"5","network_icon":"https:\/\/i.gyazo.com\/19260c2d731ff9a280e9c2c1a12b020f.png","user_payout":"3.20","payout":"3.20","user_enabled":"1","url":"https://smrturl.co/o/193455/53177516?s1="}];
+
+        // Some test Offers.
+        var testOffers = [{"id":"152916","name":"LifeScript - Travel Box","anchor":"Get your FREE Travel Samples!","conversion":"Get your FREE Travel Samples!","network_icon":"","user_payout":"1.20","user_enabled":"1","url":"\/public\/click.php"},{"id":"171613","name":"National Consumer Center - Amazon Holiday $1000","anchor":"Get Your $1000 Amazon Giftcard!","conversion":"Get Your $1000 Amazon Giftcard!","network_icon":"","user_payout":"1.40","user_enabled":"1","url":"\/public\/click.php"},{"id":"144872","name":"LifeScript - Sephora","anchor":"Get your Free Sephora Products!","conversion":"Get your Free Sephora Products!","network_icon":"","user_payout":"1.84","user_enabled":"1","url":"\/public\/click.php"},{"id":"210961","name":"National Consumer Center - Coke vs Pepsi $100","anchor":"Get Your $100 Giftcard!","conversion":"Get Your $100 Giftcard!","network_icon":"","user_payout":"1.40","user_enabled":"1","url":"\/public\/click.php"},{"id":"144863","name":"LifeScript -Netflix","anchor":"Get your FREE month of Netflix!","conversion":"Get your FREE month of Netflix!","network_icon":"","user_payout":"1.76","user_enabled":"1","url":"\/public\/click.php"},{"id":"200844","name":"CRC Target - US","anchor":"$500 Target Gift Card! ","conversion":"$500 Target Gift Card! ","network_icon":"","user_payout":"1.12","user_enabled":"1","url":"\/public\/click.php"},{"id":"152914","name":"Lab42 Survey Router - US","anchor":"Earn Cash, Sweepstakes, and Prizes!","conversion":"Earn Cash, Sweepstakes, and Prizes!","network_icon":"","user_payout":"0.72","user_enabled":"1","url":"\/public\/click.php"},{"id":"203625","name":"LG TV - US","anchor":"Join the 4K revolution, Get your new LG UHD TV with a prepaid Visa Gift Card! ","conversion":"Join the 4K revolution, Get your new LG UHD TV with a prepaid Visa Gift Card! ","network_icon":"","user_payout":"0.96","user_enabled":"1","url":"\/public\/click.php"},{"id":"200841","name":"Android vs iPhone - US","anchor":"$500 Visa Gift Card! ","conversion":"$500 Visa Gift Card! ","network_icon":"","user_payout":"0.96","user_enabled":"1","url":"\/public\/click.php"},{"id":"210184","name":"LifeScript - L'Oreal (email submit)","anchor":"Get FREE L'Oreal Samples!","conversion":"Get FREE L'Oreal Samples!","network_icon":"","user_payout":"1.20","user_enabled":"1","url":"\/public\/click.php"}];
+
+        // Capture some of the custom variable data.
+        var editing = (document.location.href.indexOf('members.cpabuild.com') > -1 ? true : false);
+
+        // Determine which Offers to use.
+        var useOffers = (editing === true ? testOffers : liveOffers);
+
+        // What default variables were provided to us?
+        var baseLockerSettings = {
+            'css': {
+                'pc': {
+                    'body': {
+                        'background': {
+                            'color': '#ffffff',
+                            'horizontal': 'left',
+                            'image': '',
+                            'size': 'cover',
+                            'vertical': 'top'
+                        }
+                    },
+                    'body-human-verification': {
+                        'background': {
+                            'color': '#fbfbfb',
+                            'horizontal': 'left',
+                            'image': '',
+                            'size': 'cover',
+                            'vertical': 'top'
+                        },
+                        'background-hover': {
+                            'color': '#b1b1b1',
+                            'horizontal': 'left',
+                            'image': '',
+                            'size': 'cover',
+                            'vertical': 'top'
+                        },
+                        'border-radius': '4',
+                        'border-color': '#b9b9b9',
+                        'border-color-hover': '#b9b9b9',
+                        'border-width': '1',
+                        'font-color': '#9c9c9c',
+                        'font-color-hover': '#565656',
+                        'font-size': '14',
+                        'font-weight': 'normal',
+                        'margin-bottom': '79',
+                        'margin-top': '84',
+                        'padding-top': '8',
+                        'padding-bottom': '8'
+                    },
+                    'body-offers': {
+                        'text-bottom-align': 'center',
+                        'text-bottom-color': '#959595',
+                        'text-bottom-padding-bottom': '17',
+                        'text-bottom-padding-top': '12',
+                        'text-bottom-shadow': 'transparent',
+                        'text-bottom-size': '13',
+                        'text-bottom-weight': 'normal',
+                        'text-top-align': 'center',
+                        'text-top-color': '#696969',
+                        'text-top-padding-bottom': '20',
+                        'text-top-padding-top': '21',
+                        'text-top-shadow': 'transparent',
+                        'text-top-size': '15',
+                        'text-top-weight': 'normal'
+                    },
+                    'body-offers-list': {
+                        'align': 'center',
+                        'background': {
+                            'color': '#fbfbfb',
+                            'horizontal': 'left',
+                            'image': '',
+                            'size': 'cover',
+                            'vertical': 'top'
+                        },
+                        'background-hover': {
+                            'color': '#b1b1b1',
+                            'horizontal': 'left',
+                            'image': '',
+                            'size': 'cover',
+                            'vertical': 'top'
+                        },
+                        'border-color': '#b9b9b9',
+                        'border-radius': '3',
+                        'border-width': '1',
+                        'font-color': '#9c9c9c',
+                        'font-color-hover': '#565656',
+                        'font-size': '13',
+                        'font-weight': 'normal',
+                        'margin-bottom': '4',
+                        'margin-top': '0',
+                        'padding-bottom': '9',
+                        'padding-top': '9',
+                        'text-align': 'center',
+                        'width': '50'
+                    },
+                    'header': {
+                        'background': {
+                            'color': '#ffffff',
+                            'horizontal': 'left',
+                            'image': '',
+                            'size': 'cover',
+                            'vertical': 'top'
+                        },
+                        'border-color': '#ffffff',
+                        'border-width': '1',
+                        'border-box-shadow': '#d1d1d1',
+                        'display': 'block',
+                        'font-align': 'center',
+                        'font-color': '#5f5f5f',
+                        'font-size': '17',
+                        'font-weight': 'normal',
+                        'padding-bottom': '18',
+                        'padding-top': '21'
+                    },
+                    'footer': {
+                        'background': {
+                            'color': '#ffffff',
+                            'horizontal': 'left',
+                            'image': '',
+                            'size': 'cover',
+                            'vertical': 'top'
+                        },
+                        'border-color': '#ffffff',
+                        'border-width': '1',
+                        'border-box-shadow': '#d1d1d1',
+                        'display': 'block',
+                        'font-align': 'center',
+                        'font-color': '#5f5f5f',
+                        'font-size': '10',
+                        'font-weight': 'normal',
+                        'padding-bottom': '11',
+                        'padding-top': '13'
+                    },
+                    'locker': {
+                        'border-radius': '2',
+                        'box-shadow': '#292929',
+                        'font': 'Montserrat',
+                        'width': '800'
+                    },
+                    'page': {
+                        'background': {
+                            'color': '#464141',
+                            'horizontal': 'left',
+                            'image': '',
+                            'size': 'cover',
+                            'vertical': 'top'
+                        },
+                        'opacity': '65'
+                    }
+                },
+                'phone': {
+                    'body': {},
+                    'body-human-verification': {
+                        'border-radius': '4',
+                        'border-width': '1',
+                        'font-size': '11',
+                        'font-weight': 'normal',
+                        'margin-bottom': '57',
+                        'margin-top': '60',
+                        'padding-top': '8',
+                        'padding-bottom': '8'
+                    },
+                    'body-offers': {
+                        'text-bottom-padding-bottom': '15',
+                        'text-bottom-padding-top': '9',
+                        'text-bottom-size': '10',
+                        'text-bottom-weight': 'normal',
+                        'text-top-padding-bottom': '15',
+                        'text-top-padding-top': '19',
+                        'text-top-size': '11',
+                        'text-top-weight': 'normal'
+                    },
+                    'body-offers-list': {
+                        'border-width': '1',
+                        'font-size': '9',
+                        'font-weight': 'normal',
+                        'margin-bottom': '4',
+                        'margin-top': '0',
+                        'padding-bottom': '5',
+                        'padding-top': '6',
+                        'width': '50'
+                    },
+                    'header': {
+                        'border-width': '1',
+                        'font-size': '13',
+                        'font-weight': 'normal',
+                        'padding-bottom': '10',
+                        'padding-top': '13'
+                    },
+                    'footer': {
+                        'border-width': '1',
+                        'font-size': '9',
+                        'font-weight': 'normal',
+                        'padding-bottom': '8',
+                        'padding-top': '5'
+                    },
+                    'locker': {},
+                    'page': {}
+                }
+            },
+            'css-custom': '',
+            'google': {
+                'analytics-tracking-id': '',
+                'event-tracking': 'disabled',
+                'translate': 'enabled'
+            },
+            'javascript-custom': '',
+            'offers': {
+                'display': '5',
+                'min-offers': '1',
+                'min-payout': '1',
+                'on-complete': 'redirect',
+                'redirect-url': 'https://google.com',
+                'show-tooltips': 'disabled'
+            },
+            'other': {
+                'alert-before-leaving': 'disabled',
+                'disable-right-click': 'enabled',
+                'esc-key-close': 'disabled',
+                'human-verification': 'disabled'
+            },
+            'text': {
+                'header': "Complete an Offer to prove you aren't a Bot",
+                'human-verification': 'Verify Through Survey',
+                'body-top': 'Complete one of the Offers below to unlock your prize',
+                'body-bottom': 'Waiting for verification%dots%',
+                'footer': 'It takes 2-3 minutes for the prize to unlock in your Country.'
+            }
+        };
+
+        // Populate the Locker Settings appropriately.
+        function recursivelyGenerateSettings(needed, provided) {
+            var returning = {};
+
+            $.each(needed, function(key, value) {
+                if (typeof value == 'object') {
+                    returning[key] = recursivelyGenerateSettings(value, (key in provided ? provided[key] : {}));
+                }
+                else {
+                    returning[key] = (key in provided ? provided[key] : needed[key]);
+                }
+            });
+
+            return returning;
+        }
+
+        // If the custom Settings were provided as a string, try and convert it to a JSON Object.
+        if (typeof savedLockerSettings == 'string') {
+            try {
+                // Was the saved locker provided to us as valid JSON?
+                var jsonParse = JSON.parse(savedLockerSettings);
+
+                // If it's not a valid JSON object.
+                if (typeof jsonParse !== 'object' || !('css' in jsonParse)) {
+                    savedLockerSettings = {};
+                }
+            }
+            catch(error) {
+                savedLockerSettings = {};
+            }
+        }
+
+        // Retrieve the recursively generated settings.
+        var useLockerSettings = recursivelyGenerateSettings(baseLockerSettings, savedLockerSettings);
+
+    </script>
+
+    <!-- Load our Application's JavaScript file -->
+    <script src="https://s3.us-west-1.amazonaws.com/cloudfls.co/uploads/assets/151999678694833b4c5a49a55ef7f9224b286820f0.js"></script>
+</head>
+
+<body class="theme-list">
+
+<!-- Google Analytics Tracking Code -->
+<script>
+
+    // If Google Analytics is enabled.
+    if (editing === false && useLockerSettings['google']['analytics-tracking-id'].length > 0) {
+        /*
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', useLockerSettings['google']['analytics-tracking-id'], 'auto');
+        */
+    }
+
+</script>
+
+<!-- Our Google Translate Element -->
+<!--<div id="google_translate_element" style="display: none;"></div>-->
+
+<!-- BEGIN: Content Locker Background Overlay -->
+<div id="my-locker-background"></div>
+<!-- END: Content Locker Background Overlay -->
+
+
+<!-- BEGIN: Custom Content Locker -->
+<div id="my-locker">
+
+    <!-- BEGIN: Content Locker Header -->
+    <div id="my-locker-top">
+        <!--<i class="fa fa-question-circle"></i>-->
+        <span></span>
+    </div>
+    <!-- END: Content Locker Header -->
+
+    <!-- BEGIN: Content Locker Body -->
+    <div id="my-locker-body">
+
+        <!-- BEGIN: Human Verification -->
+        <div id="my-locker-body-human-verification">
+            <button></button>
+        </div>
+        <!-- END: Human Verification -->
+
+        <!-- BEGIN: Content Locker Offers -->
+        <div id="my-locker-body-offers">
+            <div class="my-locker-body-text-top"></div>
+            <div id="my-locker-body-offers-list"></div>
+            <div class="my-locker-body-text-bottom"></div>
+        </div>
+        <!-- END: Content Locker Offers -->
+
+    </div>
+    <!-- END: Content Locker Body -->
+
+    <!-- BEGIN: Locker Footer -->
+    <div id="my-locker-bottom">
+        <span></span>
+    </div>
+    <!-- END: Locker Footer -->
+
+</div>
+<!-- END: Custom Content Locker -->
+
+<!-- BEGIN: Content Locker Customization Modal Overlay -->
+<div id="my-customization-overlay"></div>
+<!-- END: Content Locker Customization Modal Overlay -->
+
+<!-- BEGIN: Content Locker Customization Modal -->
+<div id="my-customization-modal" class="notranslate">
+    <div id="my-customization-modal-header">
+        <span>Choose a File</span>
+        <button>Upload</button>
+        <i class="fa fa-times"></i>
+        <input type="file" id="uploading" style="display: none;" />
+    </div>
+    <div id="my-customization-modal-body">
+        <div id="file-list"></div>
+    </div>
+    <div id="my-customization-modal-footer"></div>
+</div>
+<!-- END: Content Locker Customization Modal -->
+
+<!-- BEGIN: Custom CSS Editor -->
+<div class="my-editor-modal draggable-container notranslate my-editor-modal-css" data-type="css">
+    <div class="my-editor-dragger draggable">CSS</div>
+    <div class="my-editor-options">
+        <button>Apply</button>
+        <i class="my-editor-close fa fa-times"></i>
+    </div>
+    <div id="my-custom-code-editor-css" class="my-editor-box"></div>
+</div>
+<!-- END: Custom CSS Editor -->
+
+<!-- BEGIN: Custom JavaScript Editor -->
+<div class="my-editor-modal draggable-container notranslate my-editor-modal-javascript" data-type="javascript">
+    <div class="my-editor-dragger draggable">JavaScript</div>
+    <div class="my-editor-options">
+        <button>Apply</button>
+        <i class="my-editor-close fa fa-times"></i>
+    </div>
+    <div id="my-custom-code-editor-javascript" class="my-editor-box"></div>
+</div>
+<!-- END: Custom JavaScript Editor -->
+
+<!-- BEGIN: Content Locker Customization Treeview Overlay -->
+<div id="my-customization-treeview-overlay"></div>
+<!-- END: Content Locker Customization Treeview Overlay -->
+
+<!-- BEGIN: Content Locker Customization Tools -->
+<div id="my-customization-treeview" class="theme-list list-empty notranslate" data-device="pc">
+    <div id="my-customization-treeview-logo">
+        <img src="https://s3.us-west-1.amazonaws.com/cloudfls.co/uploads/150170764295f591d2e1daeb4fda0985149aa31c04.png" />
+    </div>
+    <div id="my-customization-treeview-heading">
+        <div class="theme-options">
+            <i class="fa fa-chevron-left"></i>
+            <span></span>
+            <button id="theme-rename">Rename</button>
+        </div>
+        <div class="theme-list">
+            <i class="fa fa-chevron-down"></i>
+            <span>Choose from one of your Content Lockers</span>
+        </div>
+    </div>
+    <div id="my-customization-treeview-options">
+        <ul id="theme-list" class="root theme-list">
+            <li class="empty">
+                <div>
+                    Welcome to CPABuild's Visual Editor for Content Lockers!<br /><br />
+                    Get started by <font>creating your first Content Locker</font>
+                </div>
+            </li>
+        </ul>
+        <ul id="theme-options" class="root theme-options">
+            <li>
+                <div>
+                    <i class="fa fa-fw fa-cog"></i>
+                    General
+                </div>
+                <ul data-depth="1">
+                    <li class="modify-inline">
+                        <div>
+                            Escape Key Close
+
+                            <select data-group="other" data-key="esc-key-close">
+                                <option value="enabled">Enabled</option>
+                                <option value="disabled">Disabled</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="modify-inline">
+                        <div>
+                            Disable Right Click
+
+                            <select data-group="other" data-key="disable-right-click">
+                                <option value="enabled">Enabled</option>
+                                <option value="disabled">Disabled</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="modify-inline">
+                        <div>
+                            Alert Before Leaving
+
+                            <select data-group="other" data-key="alert-before-leaving">
+                                <option value="enabled">Enabled</option>
+                                <option value="disabled">Disabled</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li style="display: none !important;">
+                <div>
+                    <i class="fa fa-fw fa-google"></i>
+                    Google
+                </div>
+                <ul data-depth="1">
+                    <li class="modify-inline">
+                        <div>
+                            Analytics Tracking ID
+
+                            <a class="hug-input" href="https://support.google.com/analytics/answer/1008080?hl=en"
+                               title="Need help finding your Tracking ID? Click here" target="_blank">?</a>
+
+                            <input class="hugged-input" type="text" placeholder="UA-xxxxxxxx-x" data-group="google" data-key="analytics-tracking-id" />
+                        </div>
+                    </li>
+                    <li class="modify-inline">
+                        <div>
+                            Event Tracking
+
+                            <a class="hug-input hug-input-select" href="https://analytics.google.com/analytics/web/template?uid=8TddRfv3TlaRDqOlALQ2hA"
+                               title="Make a copy of our pre-configured Google Analytics Dashboard" target="_blank">?</a>
+
+                            <select class="hugged-input" data-group="google" data-key="event-tracking">
+                                <option value="enabled">Enabled</option>
+                                <option value="disabled">Disabled</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="modify-inline">
+                        <div>
+                            Auto-Translate
+
+                            <select data-group="google" data-key="translate">
+                                <option value="enabled">Enabled</option>
+                                <option value="disabled">Disabled</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div>
+                    <i class="fa fa-fw fa-list-ol"></i>
+                    Offers
+                </div>
+                <ul data-depth="1">
+                    <li class="modify-inline">
+                        <div>
+                            Show Offer Tooltips
+
+                            <select data-group="offers" data-key="show-tooltips">
+                                <option value="enabled">Enabled</option>
+                                <option value="disabled">Disabled</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="modify-inline">
+                        <div>
+                            Number of Offers
+
+                            <input type="number" data-group="offers" data-key="display" min="1" max="10" value="5" />
+                        </div>
+                    </li>
+                    <li class="modify-inline">
+                        <div>
+                            Offers Required
+
+                            <input type="number" data-group="offers" data-key="min-offers" min="1" max="10" value="5" />
+                        </div>
+                    </li>
+                    <li class="modify-inline">
+                        <div>
+                            Payout Required (Cents)
+
+                            <input type="number" data-group="offers" data-key="min-payout" min="1" max="10" value="5" />
+                        </div>
+                    </li>
+                    <li class="modify-inline">
+                        <div>
+                            On Offer Complete
+
+                            <select data-group="offers" data-key="on-complete">
+                                <option value="close">Close Locker</option>
+                                <option value="redirect">Redirect to URL</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li id="redirect-url" class="modify-inline">
+                        <div>
+                            Redirect URL
+
+                            <input type="text" data-group="offers" data-key="redirect-url" placeholder="http://www.your-website.com" />
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li id="my-customization-css" class="separated-from-the-herd">
+                <div>
+                    <i class="fa fa-fw fa-puzzle-piece"></i>
+                    Design Your Content Locker
+                    <div class="device-manager">
+                        <i class="fa fa-desktop active" data-device="pc" title="Preview as Desktop"></i>
+                        <i class="fa fa-mobile" data-device="phone" title="Preview as Mobile Phone"></i>
+                    </div>
+                </div>
+            </li>
+            <li id="theme-custom-code">
+                <div>
+                    <i class="fa fa-fw fa-css3"></i>
+                    Custom CSS &amp; JavaScript
+                </div>
+                <ul data-depth="1">
+                    <li>
+                        <div>CSS</div>
+                    </li>
+                    <li>
+                        <div>JavaScript</div>
+                    </li>
+                </ul>
+            </li>
+            <li id="theme-options">
+                <div>
+                    <i class="fa fa-fw fa-paint-brush"></i>
+                    Design Options
+                </div>
+                <ul data-depth="1">
+                    <li id="theme-premades">
+                        <div>
+                            <i class="fa fa-fw fa-gift"></i>
+                            Pre-Made Designs
+                        </div>
+                        <ul data-depth="2"></ul>
+                    </li>
+                    <li id="theme-import">
+                        <div>
+                            <i class="fa fa-fw fa-cloud-download"></i>
+                            Import Design
+                        </div>
+                    </li>
+                    <li id="theme-export">
+                        <div>
+                            <i class="fa fa-fw fa-cloud-upload"></i>
+                            Export Design
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li id="theme-code-for-website" class="separated-from-the-herd">
+                <a href="https://members.cpabuild.com/lockerCode" target="_blank">
+                    <i class="fa fa-fw fa-code"></i>
+                    Build a Link / Code for Website
+                </a>
+            </li>
+            <li id="theme-delete">
+                <div>
+                    <i class="fa fa-fw fa-times"></i>
+                    Delete Permanently
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="my-customization-treeview-bottom">
+        <div id="my-customization-treeview-bottom-buttons">
+            <button class="create">
+                <i class="fa fa-plus"></i>
+                <span>Create New</span>
+            </button>
+            <button class="save">
+                <i class="fa fa-save"></i>
+                <span>Save</span>
+            </button>
+        </div>
+        <span class="credit">Version 1.0.8 by <font class="notranslate">@Prime</font></span>
+    </div>
+
+</div>
+<!-- END: Content Locker Customization Tools -->
+
+
+<script>
+
+    // What file is being loaded?
+    var fileUrls = {
+        'editing': 'https://s3.us-west-1.amazonaws.com/cloudfls.co/uploads/assets/1519819784efd1fb51e3a09545d6259de3ad2515f7.js',
+        //'themes': 'https://s3.us-west-1.amazonaws.com/cloudfls.co/uploads/assets/1521379645c782a2afa5d83c9fa90847618c0f6610.js',
+        'themes': 'https://s3.us-west-1.amazonaws.com/cloudfls.co/uploads/assets/15251987582db238732549eee063b62a7d50f1717f.js',
+        //'visiting': 'https://s3.us-west-1.amazonaws.com/cloudfls.co/uploads/assets/1519819785e9ebf33574139d1ec0bab198158fa8c1.js'
+        //'visiting': 'https://s3.us-west-1.amazonaws.com/cloudfls.co/uploads/assets/1528378365c61458d74e58133affe8bd44bc4cbf9c.js'
+        //'visiting': 'https://s3.us-west-1.amazonaws.com/cloudfls.co/uploads/assets/152872119825f2a3bc2ee6e39f95c7fc4f6c741672.js'
+        'visiting': 'https://s3.us-west-1.amazonaws.com/cloudfls.co/uploads/assets/1541527423a607b15a712c4823251c88682d1dbf54.js'
+    };
+
+    // Load our JavaScript file.
+    $.getScript(fileUrls[(editing === true ? 'editing' : 'visiting')]);
+
+</script>
+<script src="/public/external/guid.js"></script>
+
+</body>
+</html>
